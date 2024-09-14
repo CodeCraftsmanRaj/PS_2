@@ -1,0 +1,141 @@
+<!-- Module 1 (module1.html) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Introduction to Anti-Doping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Module 1: Introduction to Anti-Doping</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#content">Module Content</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Module Content Section -->
+    <section id="content" class="section">
+        <h2>What is Anti-Doping?</h2>
+        <p>
+            Anti-doping refers to the practice of preventing the use of prohibited substances or methods by athletes to enhance performance. The goal is to maintain fairness, protect the health of athletes, and preserve the integrity of sports.
+        </p>
+
+        <h3>National Anti-Doping Agency (NADA)</h3>
+        <p>
+            The National Anti-Doping Agency (NADA) was established with the primary objective of implementing the Anti-Doping Code and promoting clean sport in India. NADA coordinates with international and national sporting bodies to maintain anti-doping regulations.
+        </p>
+
+        <h4>Coordination Section (SP-CDN) Department of Sports</h4>
+        <p>
+            The Coordination Section (SP-CDN) under the Department of Sports plays a vital role in enforcing anti-doping regulations. They work alongside NADA to ensure compliance with the World Anti-Doping Code and engage with various stakeholders, including athletes, coaches, and support staff, to promote awareness and education.
+        </p>
+
+        <h3>Key Elements of Anti-Doping:</h3>
+        <ul>
+            <li><strong>The Prohibited List:</strong> A list of substances and methods that are banned in sports.</li>
+            <li><strong>Doping Control:</strong> The process of testing athletes for prohibited substances.</li>
+            <li><strong>Therapeutic Use Exemptions (TUEs):</strong> Allows athletes with medical conditions to use prohibited substances under certain conditions.</li>
+            <li><strong>Consequences of Violations:</strong> Athletes found guilty of doping face suspensions, fines, or bans from their sport.</li>
+        </ul>
+
+        <h4>Engagement and Awareness</h4>
+        <p>
+            Education is key to promoting clean sport. NADA and the SP-CDN Section engage with athletes through interactive sessions, workshops, and online resources. It is crucial to raise awareness about the health risks and ethical concerns of doping.
+        </p>
+
+        <h4>Interactive and Gamified Learning</h4>
+        <p>
+            To make learning about anti-doping impactful, NADA is integrating interactive elements such as quizzes, puzzles, and games. These features help reinforce the understanding of anti-doping regulations and keep athletes engaged. Completing modules and quizzes can also unlock certifications or badges.
+        </p>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="section">
+        <h2>Test Your Knowledge</h2>
+        <p>Take this quiz to assess your understanding of anti-doping practices. Your score will be displayed at the end.</p>
+
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="quiz-question">
+                <label for="question1">1. What is the primary goal of anti-doping regulations?</label>
+                <br>
+                <input type="radio" id="q1a" name="question1" value="0">
+                <label for="q1a">To promote sportsmanship</label>
+                <br>
+                <input type="radio" id="q1b" name="question1" value="1">
+                <label for="q1b">To ensure fairness in competition</label>
+                <br>
+                <input type="radio" id="q1c" name="question1" value="0">
+                <label for="q1c">To punish athletes</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-question">
+                <label for="question2">2. What is a Therapeutic Use Exemption (TUE)?</label>
+                <br>
+                <input type="radio" id="q2a" name="question2" value="1">
+                <label for="q2a">Permission to use banned substances for medical reasons</label>
+                <br>
+                <input type="radio" id="q2b" name="question2" value="0">
+                <label for="q2b">A way for athletes to avoid testing</label>
+                <br>
+                <input type="radio" id="q2c" name="question2" value="0">
+                <label for="q2c">A reward for clean athletes</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-question">
+                <label for="question3">3. What organization enforces anti-doping regulations in India?</label>
+                <br>
+                <input type="radio" id="q3a" name="question3" value="1">
+                <label for="q3a">NADA</label>
+                <br>
+                <input type="radio" id="q3b" name="question3" value="0">
+                <label for="q3b">FIFA</label>
+                <br>
+                <input type="radio" id="q3c" name="question3" value="0">
+                <label for="q3c">NCAA</label>
+            </div>
+
+            <button type="button" class="btn" onclick="submitQuiz()">Submit Answers</button>
+        </form>
+
+        <div id="quizResult" style="display:none;">
+            <h3>Your Score:</h3>
+            <p id="score"></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Anti-Doping Education Platform. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function submitQuiz() {
+            const quizForm = document.getElementById('quizForm');
+            let score = 0;
+
+            const question1 = quizForm.question1.value;
+            const question2 = quizForm.question2.value;
+            const question3 = quizForm.question3.value;
+
+            if (question1 == '1') score++;
+            if (question2 == '1') score++;
+            if (question3 == '1') score++;
+
+            // Display the result
+            document.getElementById('score').textContent = score + '/3';
+            document.getElementById('quizResult').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

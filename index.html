@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Doping Education Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Anti-Doping Education Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#modules">Educational Modules</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+                <li><a href="#chatbot">Chatbot</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="section">
+        <h2>Your Dashboard</h2>
+        <p>Track your progress through educational modules, quizzes, and more.</p>
+        <div class="dashboard-container">
+            <div class="dashboard-item">
+                <h3>Completed Modules</h3>
+                <p>2 out of 5 modules completed.</p>
+            </div>
+            <div class="dashboard-item">
+                <h3>Badges Earned</h3>
+                <p>You’ve earned 3 badges!</p>
+            </div>
+            <div class="dashboard-item">
+                <h3>Next Quiz</h3>
+                <p>Module 3 Quiz: Available now!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Modules Section -->
+    <section id="modules" class="section">
+        <h2>Educational Modules</h2>
+        <p>Explore various anti-doping topics. Click on a module to start learning.</p>
+        <div class="modules-grid">
+            <div class="module-item">
+                <h3>Module 1: Introduction to Anti-Doping</h3>
+                <a href="module1.html" class="btn">Start Module</a>
+            </div>
+            <div class="module-item">
+                <h3>Module 2: Prohibited Substances</h3>
+                <a href="module2.html" class="btn">Start Module</a>
+            </div>
+            <!-- More modules here -->
+        </div>
+    </section>
+
+    <!-- Notifications Section -->
+    <section id="notifications" class="section">
+        <h2>Notifications & Updates</h2>
+        <ul class="notifications-list">
+            <li>New update: World Anti-Doping Agency releases 2024 Prohibited List</li>
+            <li>Reminder: Complete Module 3 before September 30</li>
+            <li>Live Q&A session on Anti-Doping Regulations on October 5th</li>
+        </ul>
+    </section>
+
+    <!-- Chatbot Section -->
+    <section id="chatbot" class="section">
+        <h2>Chatbot - Ask your Anti-Doping Questions</h2>
+        <div class="chatbot-container">
+            <div id="chatbot-box" class="chatbox">
+                <div id="chatbox-messages">
+                    <!-- Chatbot messages will appear here -->
+                    <p class="chatbot-msg">Hello! I'm here to help you with your anti-doping queries. Ask me anything!</p>
+                </div>
+                <div class="chatbox-input">
+                    <input type="text" id="chat-input" placeholder="Type your question..." onkeypress="handleKeyPress(event)">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Anti-Doping Education Platform. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            const chatInput = document.getElementById('chat-input');
+            const chatboxMessages = document.getElementById('chatbox-messages');
+            const userMessage = chatInput.value.trim();
+
+            if (userMessage === "") return;
+
+            // Display user's message
+            const userMessageElement = document.createElement('p');
+            userMessageElement.classList.add('user-msg');
+            userMessageElement.textContent = userMessage;
+            chatboxMessages.appendChild(userMessageElement);
+
+            // Simulate chatbot response
+            const chatbotMessageElement = document.createElement('p');
+            chatbotMessageElement.classList.add('chatbot-msg');
+
+            if (userMessage.toLowerCase().includes("what is nada")) {
+                chatbotMessageElement.textContent = "NADA is the National Anti-Doping Agency responsible for promoting clean sport in India.";
+            } else if (userMessage.toLowerCase().includes("prohibited list")) {
+                chatbotMessageElement.textContent = "The Prohibited List contains substances and methods banned in sports. You can find the full list on NADA's website.";
+            } else {
+                chatbotMessageElement.textContent = "I'm sorry, I don't have information on that right now. Please ask another question.";
+            }
+
+            chatboxMessages.appendChild(chatbotMessageElement);
+            chatInput.value = "";
+        }
+    </script>
+</body>
+</html>

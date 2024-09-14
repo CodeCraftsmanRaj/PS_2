@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: Prohibited Substances</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Anti-Doping Education Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#content">Module 2</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content Section -->
+    <section id="content" class="section">
+        <h2>Module 2: Prohibited Substances</h2>
+        <div class="content-container">
+            <div class="info-box">
+                <h3>What Are Prohibited Substances?</h3>
+                <p>Prohibited substances are chemicals or drugs that athletes are not allowed to use in sports. These substances can enhance performance or cause harm, and they are banned to ensure fairness and safety in sports.</p>
+                <img src="prohibited-substances.jpg" alt="Prohibited Substances" class="content-image">
+            </div>
+            <div class="info-box">
+                <h3>Categories of Prohibited Substances</h3>
+                <ul>
+                    <li><strong>Stimulants:</strong> Increase alertness and reduce fatigue. Examples: amphetamines, cocaine.</li>
+                    <li><strong>Anabolic Agents:</strong> Aid muscle growth and strength. Examples: anabolic steroids, hormones.</li>
+                    <li><strong>Diuretics:</strong> Increase urine production and can mask other banned substances. Example: furosemide.</li>
+                    <li><strong>Hormones:</strong> Enhance performance. Examples: growth hormones, erythropoietin (EPO).</li>
+                    <li><strong>Beta-2 Agonists:</strong> Treat asthma but can have performance-enhancing effects. Example: salbutamol.</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h3>Checking Prohibited Substances</h3>
+                <p>Refer to the <a href="https://www.wada-ama.org/en/content/what-is-prohibited" target="_blank">WADA Prohibited List</a> to check substances that are banned. This list is updated annually.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="section">
+        <h2>Quiz: Test Your Knowledge</h2>
+        <form id="quiz-form">
+            <div class="quiz-question">
+                <p>1. Which of the following is considered a stimulant?</p>
+                <label><input type="radio" name="q1" value="a"> Cocaine</label>
+                <label><input type="radio" name="q1" value="b"> Vitamin C</label>
+                <label><input type="radio" name="q1" value="c"> Creatine</label>
+                <label><input type="radio" name="q1" value="d"> Glucose</label>
+            </div>
+            <div class="quiz-question">
+                <p>2. Anabolic steroids are categorized as which type of prohibited substance?</p>
+                <label><input type="radio" name="q2" value="a"> Stimulants</label>
+                <label><input type="radio" name="q2" value="b"> Anabolic Agents</label>
+                <label><input type="radio" name="q2" value="c"> Diuretics</label>
+                <label><input type="radio" name="q2" value="d"> Hormones</label>
+            </div>
+            <div class="quiz-question">
+                <p>3. Which of the following substances is used to mask the presence of banned substances?</p>
+                <label><input type="radio" name="q3" value="a"> Furosemide</label>
+                <label><input type="radio" name="q3" value="b"> Erythropoietin</label>
+                <label><input type="radio" name="q3" value="c"> Salbutamol</label>
+                <label><input type="radio" name="q3" value="d"> Testosterone</label>
+            </div>
+            <div class="quiz-question">
+                <p>4. The WADA Prohibited List is updated:</p>
+                <label><input type="radio" name="q4" value="a"> Monthly</label>
+                <label><input type="radio" name="q4" value="b"> Annually</label>
+                <label><input type="radio" name="q4" value="c"> Weekly</label>
+                <label><input type="radio" name="q4" value="d"> Daily</label>
+            </div>
+            <div class="quiz-question">
+                <p>5. Beta-2 agonists are used to treat:</p>
+                <label><input type="radio" name="q5" value="a"> Asthma</label>
+                <label><input type="radio" name="q5" value="b"> Diabetes</label>
+                <label><input type="radio" name="q5" value="c"> Hypertension</label>
+                <label><input type="radio" name="q5" value="d"> Depression</label>
+            </div>
+            <button type="button" onclick="submitQuiz()">Submit</button>
+            <p id="quiz-result"></p>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Anti-Doping Education Platform. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function submitQuiz() {
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'a',
+                q4: 'b',
+                q5: 'a'
+            };
+            let score = 0;
+            const form = document.getElementById('quiz-form');
+            for (let q in answers) {
+                const selected = form.querySelector(`input[name=${q}]:checked`);
+                if (selected && selected.value === answers[q]) {
+                    score++;
+                }
+            }
+            document.getElementById('quiz-result').textContent = `Your score: ${score} / ${Object.keys(answers).length}`;
+        }
+    </script>
+</body>
+</html>
